@@ -1,0 +1,177 @@
+\documentclass{report}
+\usepackage{xeCJK}
+\usepackage{inputenc}
+
+\usepackage[T1]{fontenc}
+\usepackage{ccfonts, eulervm}
+
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage{ntheorem}
+\usepackage{amssymb}
+%\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage[version=4]{mhchem}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{caption,subcaption}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{amsfonts}
+\usepackage{titlesec}
+\usepackage{mathrsfs}
+\usepackage{pifont}
+
+\usepackage{graphbox}
+
+%\usepackage{theorem}
+
+\usepackage{hyperref}
+\definecolor{winered}{rgb}{0.5,0,0}
+\hypersetup{
+  breaklinks,
+  unicode,
+  linktoc=all,
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  colorlinks,
+  linkcolor=winered,
+  citecolor=winered,
+  urlcolor=winered,
+  plainpages=false,
+  pdfstartview=FitH,
+  pdfborder={0 0 0},
+  linktocpage
+}
+
+
+\definecolor{structurecolor}{RGB}{0,120,2}
+
+\newcommand{\D}{\displaystyle}
+
+%\renewcommand\figureautorefname{图}
+%\renewcommand\equationautorefname{式}
+
+\setlength{\parindent}{2em}
+
+\newcommand\thmref[1]{定理~\ref{#1}}
+\newcommand\defref[1]{定义~\ref{#1}}
+
+\theorembodyfont{\upshape}
+\newtheorem{definition}{定义}[chapter]
+\newtheorem{thm}{定理}[chapter]
+\renewcommand\parallel{\mathrel{/\mskip-2.5mu/}}
+
+\numberwithin{equation}{section}
+\renewcommand\theequation{\thesection.\arabic{equation}}
+
+
+%\geometry{a4paper, left = 3 cm, right = 3 cm, top = 2 cm, bottom = 1.75 cm}
+%\pagestyle{plain}
+\title{\Huge\textbf{半导体物理笔记}\\ \vspace{1ex}\LARGE Notes for Semiconductor Physics}
+\author{\Large RURIKO\vspace{2ex} \\ \vspace{2ex}东华大学 \& ITP \\ \href{mailto:mygo@soyor.in}{mygo@soyor.in}}
+\date{二〇二三·霜月廿八}
+%\CTEXoptions[today = old]
+%\CTEXsetup[number={\chinese{section}}]{section}
+
+
+\begin{document}
+
+\begin{titlepage}
+\vspace*{\stretch{1}}
+\begin{center}
+  {\Huge\bfseries 半导体\includegraphics[width=2em, align=c]{の.png}まほう}\\[2ex]
+  \textsc{\LARGE Semiconductors no Mahou}\\[6.5ex]
+  {\large\bfseries るりこ\ding{73}}           \\
+  \vspace{4ex}
+  \href{mailto:mygo@soyor.in}{mygo@soyor.in}                    \\[5pt]
+  \textit{Institute of Toho Project}                \\[0.8cm]
+  \begin{figure}[H]
+      \centering
+\iffalse
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,333); %set diagram left start at 0, and has height of 333
+
+%Flowchart: Extract [id:dp2941884800038894] 
+\draw   (269.95,159.63) -- (236.47,303.77) -- (181.89,251.99) -- cycle ;
+%Straight Lines [id:da11678715957846952] 
+\draw    (269.96,159.64) -- (360.54,266.3) ;
+%Straight Lines [id:da6291753538375728] 
+\draw    (236.47,303.77) -- (360.54,266.3) ;
+%Straight Lines [id:da792032373772936] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (181.87,251.97) -- (360.54,266.3) ;
+%Straight Lines [id:da16681599054483343] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ]   (271.46,159.71) -- (267.74,238.02)(268.46,159.57) -- (264.74,237.87) ;
+%Straight Lines [id:da8617596562201413] 
+\draw    (266.48,239.43) -- (182.12,253.45)(265.99,236.47) -- (181.63,250.49) ;
+%Straight Lines [id:da5282358800451186] 
+\draw    (266.67,236.51) -- (360.97,264.86)(265.81,239.38) -- (360.1,267.74) ;
+%Straight Lines [id:da21390436106539057] 
+\draw    (267.6,238.56) -- (237.84,304.39)(264.87,237.33) -- (235.1,303.15) ;
+%Shape: Ellipse [id:dp8215196387479993] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (177.75,251.98) .. controls (177.75,250.1) and (179.59,248.58) .. (181.88,248.58) .. controls (184.16,248.58) and (186.01,250.1) .. (186.01,251.98) .. controls (186.01,253.85) and (184.16,255.37) .. (181.88,255.37) .. controls (179.59,255.37) and (177.75,253.85) .. (177.75,251.98) -- cycle ;
+%Shape: Ellipse [id:dp4448830323802311] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (356.41,266.3) .. controls (356.41,264.43) and (358.26,262.91) .. (360.54,262.91) .. controls (362.82,262.91) and (364.67,264.43) .. (364.67,266.3) .. controls (364.67,268.18) and (362.82,269.7) .. (360.54,269.7) .. controls (358.26,269.7) and (356.41,268.18) .. (356.41,266.3) -- cycle ;
+%Shape: Ellipse [id:dp8703628065470996] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (262.11,237.95) .. controls (262.11,236.07) and (263.96,234.55) .. (266.24,234.55) .. controls (268.52,234.55) and (270.37,236.07) .. (270.37,237.95) .. controls (270.37,239.82) and (268.52,241.34) .. (266.24,241.34) .. controls (263.96,241.34) and (262.11,239.82) .. (262.11,237.95) -- cycle ;
+%Shape: Ellipse [id:dp849985969268054] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (232.34,303.77) .. controls (232.34,301.9) and (234.19,300.38) .. (236.47,300.38) .. controls (238.75,300.38) and (240.6,301.9) .. (240.6,303.77) .. controls (240.6,305.65) and (238.75,307.17) .. (236.47,307.17) .. controls (234.19,307.17) and (232.34,305.65) .. (232.34,303.77) -- cycle ;
+%Flowchart: Extract [id:dp6785400638013208] 
+\draw   (269.74,160.71) -- (303.22,16.56) -- (357.8,68.34) -- cycle ;
+%Straight Lines [id:da20209656477864724] 
+\draw    (269.73,160.69) -- (179.16,54.03) ;
+%Straight Lines [id:da5647777387009512] 
+\draw    (303.22,16.56) -- (179.16,54.03) ;
+%Straight Lines [id:da8822272135588105] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (357.82,68.36) -- (179.16,54.03) ;
+%Straight Lines [id:da4031424627037421] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ]   (268.23,160.62) -- (271.96,82.32)(271.23,160.76) -- (274.95,82.46) ;
+%Straight Lines [id:da821119657264433] 
+\draw    (273.21,80.91) -- (357.57,66.88)(273.7,83.87) -- (358.06,69.84) ;
+%Straight Lines [id:da2646636534679556] 
+\draw    (273.02,83.82) -- (178.72,55.47)(273.89,80.95) -- (179.59,52.6) ;
+%Straight Lines [id:da21584435119758316] 
+\draw    (272.09,81.77) -- (301.86,15.94)(274.82,83.01) -- (304.59,17.18) ;
+%Shape: Ellipse [id:dp5083951906553468] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (361.95,68.35) .. controls (361.95,70.23) and (360.1,71.75) .. (357.82,71.75) .. controls (355.54,71.75) and (353.69,70.23) .. (353.69,68.35) .. controls (353.69,66.48) and (355.54,64.96) .. (357.82,64.96) .. controls (360.1,64.96) and (361.95,66.48) .. (361.95,68.35) -- cycle ;
+%Shape: Ellipse [id:dp16258452560829584] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (183.29,54.03) .. controls (183.29,55.91) and (181.44,57.43) .. (179.16,57.43) .. controls (176.88,57.43) and (175.03,55.91) .. (175.03,54.03) .. controls (175.03,52.16) and (176.88,50.64) .. (179.16,50.64) .. controls (181.44,50.64) and (183.29,52.16) .. (183.29,54.03) -- cycle ;
+%Shape: Ellipse [id:dp6532614227384939] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (277.59,82.39) .. controls (277.59,84.26) and (275.74,85.78) .. (273.46,85.78) .. controls (271.17,85.78) and (269.33,84.26) .. (269.33,82.39) .. controls (269.33,80.51) and (271.17,78.99) .. (273.46,78.99) .. controls (275.74,78.99) and (277.59,80.51) .. (277.59,82.39) -- cycle ;
+%Shape: Ellipse [id:dp5612577204843858] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (307.35,16.56) .. controls (307.35,18.44) and (305.5,19.96) .. (303.22,19.96) .. controls (300.94,19.96) and (299.09,18.44) .. (299.09,16.56) .. controls (299.09,14.69) and (300.94,13.17) .. (303.22,13.17) .. controls (305.5,13.17) and (307.35,14.69) .. (307.35,16.56) -- cycle ;
+%Shape: Ellipse [id:dp656158588884858] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (265.83,159.64) .. controls (265.83,157.76) and (267.68,156.24) .. (269.96,156.24) .. controls (272.24,156.24) and (274.09,157.76) .. (274.09,159.64) .. controls (274.09,161.51) and (272.24,163.03) .. (269.96,163.03) .. controls (267.68,163.03) and (265.83,161.51) .. (265.83,159.64) -- cycle ;
+\end{tikzpicture}
+\fi
+\includegraphics[width=0.67\linewidth]{cover.jpg}
+  \end{figure} 
+  \vfill
+  \large 迷子でもいい、迷子でも進め。                                \\
+  \vfill
+  二〇二三·霜月〇三
+\end{center}
+\vspace{\stretch{2}}
+\end{titlepage}
+
+\tableofcontents
+
+\input{chapter_star}
+
+\input{Chapter1,2}
+
+\input{Chapter3}
+
+\input{Chapter4}
+
+\input{Chapter5}
+
+\input{Chapter6}
+
+\end{document}

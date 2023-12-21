@@ -1,0 +1,78 @@
+\chapter{非平衡载流子}
+
+\section{非平衡载流子的注入和复合}
+
+处于热平衡下的载流子浓度称为\textbf{平衡载流子浓度}。一般用$n_0$和$p_0$分别表示平衡电子浓度和空穴浓度。非简并条件下，其乘积满足关系：
+\begin{equation}
+    n_0p_0=N_vN_c\exp{\left(-\frac{E_g}{k_0T}\right)}=n_i^2
+\end{equation}
+
+对半导体施加外界作用，破坏热平衡条件，使半导体处于与热平衡偏离的状态，称为\textbf{非平衡状态}。处于非平衡状态的半导体，其载流子浓度浓度不再为$n_0$和$p_0$，而会多出一部分。比平衡状态多出的载流子称为\textbf{非平衡载流子}或\textbf{过剩载流子}。
+
+一定温度下，n型半导体中，$n_0\gg p_0$，用适当波长的光照射半导体，且光子能量大于半导体的禁带宽度，则光子可以将价带电子激发到导带上，形成电子-空穴对，导带比平衡时多出$\Delta n$的电子，即\textbf{非平衡电子}，称为\textbf{非平衡多数载流子(多子)}；价带多出$\Delta p$的空穴，即\textbf{非平衡空穴}，称为\textbf{非平衡少数载流子(少子)}。这种通过光照产生非平衡载流子的方法，称为非平衡载流子的\textbf{光注入}。光注入时有：
+\begin{equation}
+    \Delta n=\Delta p
+\end{equation}
+
+一般情况下，注入的非平衡载流子浓度比平衡时的多数载流子浓度小得多。对上述情况，有：
+\begin{equation}
+    \Delta n\ll n_0,\quad \Delta p\ll n_0
+\end{equation}
+满足此条件的注入称为\textbf{小注入}。在小注入条件下，非平衡少子的浓度也可以比平衡少子的浓度大得多，如上例中有$\Delta p\gg p_0$。非平衡少子常常会起决定性作用。通常所说的非平衡载流子都指非平衡少子。
+
+光注入导致半导体的电导率增大。附加电导率为：
+\begin{equation}
+    \Delta \sigma=\Delta nq\mu_n+\Delta pq\mu_p=\Delta pq(\mu_n+\mu_p)
+\end{equation}
+
+设半导体平衡电导率为$\sigma_0$，光照引起附加电导率$\Delta \sigma$，小注入条件下$\sigma_0+\Delta \sigma\approx\sigma_0$，电阻率改变：
+\begin{equation}
+    \Delta\rho=\frac{1}{\sigma}-\frac{1}{\sigma_0}=\frac{1}{\sigma_0+\Delta\sigma}-\frac{1}{\sigma_0}=-\frac{\Delta\sigma}{(\sigma_0+\Delta\sigma)\sigma_0}\approx-\frac{\Delta\sigma}{\sigma_0^2}
+\end{equation}
+半导体电阻改变：
+\begin{equation}
+    \Delta r=\Delta\rho\frac{l}{s}\approx-\frac{l}{s\sigma_0^2}\Delta\sigma
+\end{equation}
+$l,\ s$为半导体的长度和截面积。因此$\Delta r\propto \Delta \sigma$。半导体通电时，由于电势差$\Delta V=I\Delta r$，故$\Delta V\propto\Delta\sigma$，因此$\Delta V\propto\Delta p$：
+\begin{equation}
+    \Delta V=-\frac{l}{s\sigma^2}Iq(\mu_n+\mu_p)\Delta p
+\end{equation}
+
+\section{非平衡载流子的寿命}
+
+小注入时，$\Delta V$的变化反映了$\Delta p$的变化。光照停止后，$\Delta p$随时间按指数减小。非平衡载流子的平均生存时间称为载流子的\textbf{寿命}，用$\tau$表示(上章有个叫平均自由时间的物理量也记成$\tau$来
+着\includegraphics[width=4em, align=c]{idiot.jpg})。由于非平衡少子相比多子更占主导地位，因此非平衡载流子的寿命常称为\textbf{少子的寿命}。显然$\D \frac{1}{\tau}$是单位时间内非平衡载流子的复合概率。\vspace{1ex}
+通常将单位时间单位体积内净复合消失的电子-空穴对数称为非平衡载流子的\textbf{复合率}。显然，$\D \frac{\Delta p}{\tau}$就是复合率。
+
+一束光在一块n型半导体内均匀产生非平衡载流子$\Delta n$和$\Delta p$。$t=0$时光照停止，\vspace{1ex}
+$\Delta p$会随时间变化，单位时间内浓度减小$\D -\frac{\mathrm{d}\Delta p(t)}{\mathrm{d}t}$，减小是由电子-空穴对的复合引起的，应当等于非平衡载流子的复合率：
+\begin{equation}
+    \frac{\mathrm{d}\Delta p(t)}{\mathrm{d}t}=-\frac{\Delta p}{\tau}
+\end{equation}
+寿命$\tau$在小注入条件下是个恒量，与$\Delta p(t)$无关。解这个微分方程：
+\begin{equation}
+    \Delta p(t)=C\mathrm{e}^{-\frac{t}{\tau}}
+\end{equation}
+设$t=0$时刻停止光照时少子浓度$\Delta p(0)=\Delta p_0$，作为边界条件代入微分方程，解得系数为$C=\Delta p_0$，故：
+\begin{equation}
+    \Delta p(t)=\Delta p_0\mathrm{e}^{-\frac{t}{\tau}}
+\end{equation}
+即非平衡载流子浓度随时间按指数衰减。
+
+\section{准费米能级}
+
+热平衡下的半导体中电子和空穴具有统一的费米能级。非简并条件下：
+\begin{equation}
+    n_0=N_c\exp{\left(-\frac{E_c-E_F}{k_0T}\right)},\quad p_0=N_v\exp{\left(-\frac{E_F-E_v}{k_0T}\right)}
+\end{equation}
+外界影响下破坏了热平衡，非平衡态的半导体不再具有统一的费米能级。我们认为价带和导带中的电子与空穴各自处于平衡状态，但价带与导带之间不处于平衡态。因此可以分别引入\textbf{导带费米能级}和\textbf{价带费米能级}，均为\textbf{局部费米能级}，称为\textbf{准费米能级}。导带费米能级也称为\textbf{电子准费米能级}，用$E_{Fn}$表示，价带准费米能级也称为\textbf{空穴准费米能级}，用$E_{Fp}$表示。
+
+非平衡下的载流子浓度可以用与平衡载流子浓度类似公式表达：
+\begin{equation}
+    n=N_c\exp{\left(-\frac{E_c-E_{Fn}}{k_0T}\right)},\quad p=N_v\exp{\left(-\frac{E_{Fp}-E_v}{k_0T}\right)}
+\end{equation}
+
+
+
+
+
