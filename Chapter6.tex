@@ -138,6 +138,188 @@ $n,\ p$分别为电子和空穴浓度。单位体积，单位时间里，每个�
 \end{equation}
 比例系数$r$称为\textbf{电子-空穴复合概率}，它代表着所有电子和空穴复合概率的平均值。
 
+载流子受激发的概率不受载流子浓度的影响，产生率在所有非简并情况下是相同的，即$G$仅与温度有关，和$n,\ p$无关。
+
+热平衡时，产生率等于复合率：$P=G$，此时$n=n_0,\ p=p_0$，因此得到$G$与$r$的关系：
+\begin{equation}
+    G=P=rn_0p_0=rn_i^2
+\end{equation}
+复合率减产生率即非平衡载流子的净复合率，得到净复合率$U_d$为：
+\begin{equation}
+    U_d=R-G=rnp-rn_i^2=r(np-n_i^2)
+\end{equation}
+代入关系$n=n_0+\Delta n,\ p=p_0+\Delta p,\ \Delta n=\Delta p$，得：
+\begin{align}
+    U_d&=r[(n_0+\Delta n)(p_0+\Delta p)-n_0p_0]\notag\\
+    &=r(n_0\Delta p+p_0\Delta p+\Delta p^2)\notag\\
+    &=r(n_0+p_0)\Delta p+r\Delta p^2
+\end{align}
+由于净复合率和载流子寿命存在关系：
+\begin{equation}
+    U_d=\frac{\Delta p}{\tau}
+\end{equation}
+得载流子寿命：
+\begin{equation}
+    \tau=\frac{\Delta p}{U_d}=\frac{1}{r[(n_0+p_0)+\Delta p]}\label{eq:chap-5-direct-recombination-lifetime}
+\end{equation}
+可见寿命$\tau$不仅与平衡载流子浓度有关，也与非平衡载流子浓度有关。
+
+在小注入条件下，$\Delta p\ll (n_0+p_0)$，\autoref{eq:chap-5-direct-recombination-lifetime}近似为：
+\begin{equation}
+    \tau\approx\frac{1}{r(n_0+p_0)}
+\end{equation}
+对n型材料，$n_0\gg p_0$，上式近似有
+\begin{equation}
+    \tau\approx\frac{1}{rn_0}
+\end{equation}
+寿命与非平衡载流子无关，与多数载流子成反比。
+
+当$\Delta p\gg n_0+p_0$时，\autoref{eq:chap-5-direct-recombination-lifetime}近似有：
+\begin{equation}
+    \tau\approx\frac{1}{r\Delta p}
+\end{equation}
+此时寿命与非平衡载流子成反比。
+
+\subsection{间接复合}
+
+半导体中的杂质和缺陷会促进非平衡载流子的复合过程，这些促进复合的杂质和缺陷称为\textbf{复合中心}。间接复合即非平衡载流子通过复合中心的复合。
+
+记复合中心能级$E_t$，如\autoref{fig:indirect-recombination-process}，能级$E_t$上的间接复合具有四个过程：
+\begin{enumerate}[(1)]
+    \item 俘获电子：复合中心能级$E_t$从导带俘获电子。
+    \item 发射电子：复合中心能级$E_t$上的电子被激发到导带。
+    \item 俘获空穴：电子由复合中心能级$E_t$落入价带，与空穴复合，可以看成复合中心能级$E_t$从价带俘获一个电子。
+    \item 发射空穴：价带电子激发到复合中心能级$E_t$，可以看出复合中心能级$E_t$向价带发射一个空穴。
+\end{enumerate}
+
+\begin{figure}[ht]
+    \centering
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da20064609469527683] 
+\draw    (120.67,31.08) -- (137.17,31.09) -- (253.17,31.1) ;
+%Straight Lines [id:da19330925404980026] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (120.17,77.5) -- (252.67,77.5) ;
+%Straight Lines [id:da5528060898844296] 
+\draw    (120.17,125) -- (252.67,125) ;
+%Shape: Circle [id:dp32843318610089023] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (134.63,31.09) .. controls (134.63,32.49) and (135.76,33.63) .. (137.17,33.63) .. controls (138.57,33.63) and (139.71,32.49) .. (139.71,31.09) .. controls (139.71,29.68) and (138.57,28.54) .. (137.17,28.54) .. controls (135.76,28.54) and (134.63,29.68) .. (134.63,31.09) -- cycle ;
+%Straight Lines [id:da48904866335535435] 
+\draw    (137.17,31.09) -- (137.17,74.58) ;
+\draw [shift={(137.17,77.58)}, rotate = 270] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+%Straight Lines [id:da7345813081514647] 
+\draw    (160.67,33.09) -- (160.67,76.58) ;
+\draw [shift={(160.67,30.09)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+%Shape: Circle [id:dp42146991706121617] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (158.12,76.58) .. controls (158.12,77.99) and (159.26,79.13) .. (160.67,79.13) .. controls (162.07,79.13) and (163.21,77.99) .. (163.21,76.58) .. controls (163.21,75.18) and (162.07,74.04) .. (160.67,74.04) .. controls (159.26,74.04) and (158.12,75.18) .. (158.12,76.58) -- cycle ;
+%Straight Lines [id:da21853964923058133] 
+\draw    (195.17,77.59) -- (195.17,121.08) ;
+\draw [shift={(195.17,124.08)}, rotate = 270] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+%Shape: Circle [id:dp8914894742891817] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (192.63,77.59) .. controls (192.63,78.99) and (193.76,80.13) .. (195.17,80.13) .. controls (196.57,80.13) and (197.71,78.99) .. (197.71,77.59) .. controls (197.71,76.18) and (196.57,75.04) .. (195.17,75.04) .. controls (193.76,75.04) and (192.63,76.18) .. (192.63,77.59) -- cycle ;
+%Straight Lines [id:da2456794806958813] 
+\draw    (232.67,80.59) -- (232.67,124.08) ;
+\draw [shift={(232.67,77.59)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (10.72,-5.15) -- (0,0) -- (10.72,5.15) -- (7.12,0) -- cycle    ;
+%Shape: Circle [id:dp5273521015953397] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (230.12,124.08) .. controls (230.12,125.49) and (231.26,126.63) .. (232.67,126.63) .. controls (234.07,126.63) and (235.21,125.49) .. (235.21,124.08) .. controls (235.21,122.68) and (234.07,121.54) .. (232.67,121.54) .. controls (231.26,121.54) and (230.12,122.68) .. (230.12,124.08) -- cycle ;
+
+% Text Node
+\draw (115.67,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {(1)};
+% Text Node
+\draw (162,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {(2)};
+% Text Node
+\draw (173.67,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {(3)};
+% Text Node
+\draw (233.17,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {(4)};
+% Text Node
+\draw (254.67,116.9) node [anchor=north west][inner sep=0.75pt]    {$E_{v}$};
+% Text Node
+\draw (254.17,23.9) node [anchor=north west][inner sep=0.75pt]    {$E_{c}$};
+% Text Node
+\draw (254.67,69.4) node [anchor=north west][inner sep=0.75pt]    {$E_{t}$};
+\end{tikzpicture}
+    \caption{复合中心能级$E_t$的四个间接复合过程}
+    \label{fig:indirect-recombination-process}
+\end{figure}
+
+$n$和$p$分别为导带电子和价带空穴浓度，设复合中心浓度为$N_t$，复合中心能级上的电子浓度为$n_t$，则未被电子占据的复合中心浓度为$N_t-n_t$。
+
+(1) 过程中，我们把单位体积、单位时间内内复合中心俘获的电子数称为\textbf{电子俘获率}。电子俘获率与导带电子浓度$n$和未被占据的复合中心浓度$(N_t-n_t)$成正比：
+\begin{equation}
+    \text{电子俘获率}=r_nn(N_t-n_t)
+\end{equation}
+比例系数$r_n$是\textbf{电子俘获系数}，反映了复合中心平均俘获电子能力的大小。
+
+(2) 过程是 (1) 过程的逆过程。我们用电子产生率表示单位时间、单位体积向导带发射的电子数。只有已被占据的复合中心才能向导带发射电子，导带近似认为是空的，因此电子产生率与$n_t$成正比，和$n$无关：
+\begin{equation}
+    \text{电子产生率}=s_-n_t
+\end{equation}
+$s_-$称为\textbf{电子激发概率}，仅与温度有关。
+
+平衡时，(1) 过程和 (2) 过程相互抵消，电子产生率等于电子俘获率：
+\begin{equation}
+    r_nn_0(N_t-n_{t0})=s_-n_{t0}\label{eq:chap-5-equilibrium-indirect-recombination-electron-equation}
+\end{equation}
+$n_0$和$n_{t0}$分别为平衡时导带和复合中心能级上的电子浓度。计算$n_{t0}$时，我们忽略分布函数中的简并因子：
+\begin{equation}
+    n_{t0}=N_tf(E_t)=N_t\frac{1}{\D 1+\exp{\left(\frac{E_t-E_F}{k_0T}\right)}}
+\end{equation}
+非简并条件下：
+\begin{equation}
+    n_0=N_c\exp{\left(\frac{E_F-E_c}{k_0T}\right)}
+\end{equation}
+将$n_0$和$n_{t0}$表达式代入\autoref{eq:chap-5-equilibrium-indirect-recombination-electron-equation}：
+\begin{align}
+    s_-N_t\frac{1}{\D 1+\exp{\left(\frac{E_t-E_F}{k_0T}\right)}}&=r_nN_c\exp{\left(\frac{E_F-E_c}{k_0T}\right)}N_t\left[1-\left(\frac{1}{\D 1+\exp{\left(\frac{E_t-E_F}{k_0T}\right)}}\right)\right]\notag\\
+    \Longrightarrow s_-&=r_nN_c\exp{\left(\frac{E_F-E_c}{k_0T}\right)}\exp{\left(\frac{E_t-E_F}{k_0T}\right)}\notag\\
+    \Longrightarrow s_-&=r_nN_c\exp{\left(\frac{E_t-E_c}{k_0T}\right)}
+\end{align}
+记：
+\begin{equation}
+    n_1=N_c\exp{\left(\frac{E_t-E_c}{k_0T}\right)}
+\end{equation}
+$n_1$等于费米能级与复合中心能级重合时导带电子平均浓度。代入：
+\begin{equation}
+    s_-=r_nN_c\exp{\left(\frac{E_t-E_c}{k_0T}\right)}=r_nn_1
+\end{equation}
+将上式代入电子产生率中：
+\begin{equation}
+    \text{电子产生率}=r_nn_1n_t
+\end{equation}
+
+(3) 过程中，空穴俘获率与$n_t$和$p$成正比：
+\begin{equation}
+    \text{空穴俘获率}=r_ppn_t
+\end{equation}
+$r_p$称为\textbf{空穴俘获系数}，反映复合中心平均俘获空穴的能力.
+
+(4) 过程是 (3) 的逆过程类似上文讨论，有：
+\begin{equation}
+    \text{空穴产生率}=s_+(N_t-n_t)
+\end{equation}
+$s_+$为\textbf{空穴激发概率}。
+
+平衡时，(3) 和 (4) 过程相互抵消：
+\begin{equation}
+    s_+(N_t-n_{t0})=r_pp_0n_{t0}
+\end{equation}
+代入平衡时$p_0$和$n_{t0}$值，得：
+\begin{equation}
+    s_+=r_pp_1
+\end{equation}
+其中
+\begin{equation}
+    p_1=N_v\exp{\left(-\frac{E_t-E_v}{k_0T}\right)}
+\end{equation}
+$p_1$等于费米能级和复合中心能级重合时价带的平衡空穴浓度。
+
+将$s_+$表达式代入空穴产生率，得：
+\begin{equation}
+    \text{空穴产生率}=r_pp_1(N_t-n_t)
+\end{equation}
 
 
 
