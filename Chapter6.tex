@@ -63,7 +63,7 @@ $\Delta p$会随时间变化，单位时间内浓度减小$\D -\frac{\mathrm{d}\
 
 热平衡下的半导体中电子和空穴具有统一的费米能级。非简并条件下：
 \begin{equation}
-    n_0=N_c\exp{\left(-\frac{E_c-E_F}{k_0T}\right)},\quad p_0=N_v\exp{\left(-\frac{E_F-E_v}{k_0T}\right)}
+    n_0=N_c\exp{\left(-\frac{E_c-E_F}{k_0T}\right)},\quad p_0=N_v\exp{\left(-\frac{E_F-E_v}{k_0T}\right)}\label{eq:chap-5-equilibrium-distribute}
 \end{equation}
 外界影响下破坏了热平衡，非平衡态的半导体不再具有统一的费米能级。我们认为价带和导带中的电子与空穴各自处于平衡状态，但价带与导带之间不处于平衡态。因此可以分别引入\textbf{导带费米能级}和\textbf{价带费米能级}，均为\textbf{局部费米能级}，称为\textbf{准费米能级}。导带费米能级也称为\textbf{电子准费米能级}，用$E_{Fn}$表示，价带准费米能级也称为\textbf{空穴准费米能级}，用$E_{Fp}$表示。
 
@@ -71,6 +71,72 @@ $\Delta p$会随时间变化，单位时间内浓度减小$\D -\frac{\mathrm{d}\
 \begin{equation}
     n=N_c\exp{\left(-\frac{E_c-E_{Fn}}{k_0T}\right)},\quad p=N_v\exp{\left(-\frac{E_{Fp}-E_v}{k_0T}\right)}
 \end{equation}
+上式适用的条件与平衡态载流子相同，即$E_{Fn}$和$E_{Fp}$不能进入导带或价带。参考\autoref{eq:chap-5-equilibrium-distribute}，可以推导出$n$与$n_0$，$p$与$p_0$的关系：
+\begin{align}
+&
+\begin{aligned}
+    n&=N_c\exp{\left(-\frac{E_c-E_{Fn}}{k_0T}\right)}\\
+    &=N_c\exp{\left(-\frac{E_c-E_{F}}{k_0T}\right)}\exp{\left(\frac{E_{Fn}-E_F}{k_0T}\right)}\\
+    &=n_0\exp{\left(\frac{E_{Fn}-E_F}{k_0T}\right)}
+\end{aligned}
+\\
+&
+\begin{aligned}
+    p&=N_v\exp{\left(-\frac{E_{Fp}-E_v}{k_0T}\right)}\\
+    &=N_v\exp{\left(-\frac{E_{F}-E_v}{k_0T}\right)}\exp{\left(\frac{E_F-E_{Fp}}{k_0T}\right)}\\
+    &=p_0\exp{\left(\frac{E_F-E_{Fp}}{k_0T}\right)}
+\end{aligned}
+\end{align}
+由
+\begin{equation}
+    n_0=n_i\exp{\left(-\frac{E_i-E_F}{k_0T}\right)},\quad p_0=n_i\exp{\left(\frac{E_i-E_F}{k_0T}\right)}
+\end{equation}
+进一步推导：
+\begin{align}
+&
+    \begin{aligned}
+        n&=n_0\exp{\left(\frac{E_{Fn}-E_F}{k_0T}\right)}\\
+        &=n_i\exp{\left(-\frac{E_i-E_F}{k_0T}\right)}\exp{\left(\frac{E_{Fn}-E_F}{k_0T}\right)}\\
+        &=n_i\exp{\left(\frac{E_{Fn}-E_i}{k_0T}\right)}
+    \end{aligned}
+    \\
+&
+    \begin{aligned}
+        p&=p_0\exp{\left(\frac{E_F-E_{Fp}}{k_0T}\right)}\\
+        &=n_i\exp{\left(\frac{E_i-E_F}{k_0T}\right)}\exp{\left(\frac{E_F-E_{Fp}}{k_0T}\right)}\\
+        &=n_i\exp{\left(\frac{E_i-E_{Fp}}{k_0T}\right)}
+    \end{aligned}
+\end{align}
+电子与空穴浓度的乘积：
+\begin{equation}
+    np=n_0p_0\exp{\left(\frac{E_{Fn}-E_{Fp}}{k_0T}\right)}
+\end{equation}
+
+\section{复合理论}
+
+\subsection{载流子复合的分类}
+
+半导体\textbf{复合}的过程即半导体\textbf{由非平衡态向平衡态过渡}的过程。半导体的复合过程大致可分为：
+\begin{enumerate}
+    \item 直接复合：电子在导带与价带间直接跃迁，实现电子与空穴的复合。
+    \item 间接复合：电子与空穴通过禁带能级复合。简介复合按照发生位置可以分为\textbf{体内复合}和\textbf{表面复合}。
+\end{enumerate}
+载流子复合时会放出多余能量，放出能量的方法有：
+\begin{enumerate}
+    \item 发射光子：伴随复合，伴有发光现象，称为\textbf{发光复合}或\textbf{辐射复合}。
+    \item 发射声子：载流子将多余能量传递给晶格，加强晶格振动。
+    \item 能量给予其他载流子，增大动能，称为\textbf{俄歇(Auger)复合}。
+\end{enumerate}
+
+\subsection{直接复合}
+
+半导体中同时存在着载流子的\textbf{产生}和和\textbf{复合}两个过程。单位时间内产生的电子-空穴对数称为\textbf{产生率}，记为$G$，复合的电子-空穴对数称为\textbf{复合率}，记为$R$。
+
+$n,\ p$分别为电子和空穴浓度。单位体积，单位时间里，每个电子都有概率和空穴复合，复合概率与空穴浓度成正比，即每个电子复合的概率为$rp$，$r$是比例系数。每个电子复合概率再乘以电子浓度就是全部电子的复合率，即：
+\begin{equation}
+    R=rnp
+\end{equation}
+比例系数$r$称为\textbf{电子-空穴复合概率}，它代表着所有电子和空穴复合概率的平均值。
 
 
 
