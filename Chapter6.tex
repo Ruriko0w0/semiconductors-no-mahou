@@ -249,7 +249,7 @@ $n$和$p$分别为导带电子和价带空穴浓度，设复合中心浓度为$N
 
 (1) 过程中，我们把单位体积、单位时间内内复合中心俘获的电子数称为\textbf{电子俘获率}。电子俘获率与导带电子浓度$n$和未被占据的复合中心浓度$(N_t-n_t)$成正比：
 \begin{equation}
-    \text{电子俘获率}=r_nn(N_t-n_t)
+    \text{电子俘获率}=r_nn(N_t-n_t)\label{eq:chap-5-indirect-recombination-electron-capture-rate}
 \end{equation}
 比例系数$r_n$是\textbf{电子俘获系数}，反映了复合中心平均俘获电子能力的大小。
 
@@ -287,12 +287,12 @@ $n_1$等于费米能级与复合中心能级重合时导带电子平均浓度。
 \end{equation}
 将上式代入电子产生率中：
 \begin{equation}
-    \text{电子产生率}=r_nn_1n_t
+    \text{电子产生率}=r_nn_1n_t\label{eq:chap-5-indirect-recombination-electron-generation-rate}
 \end{equation}
 
 (3) 过程中，空穴俘获率与$n_t$和$p$成正比：
 \begin{equation}
-    \text{空穴俘获率}=r_ppn_t
+    \text{空穴俘获率}=r_ppn_t\label{eq:chap-5-indirect-recombination-hole-capture-rate}
 \end{equation}
 $r_p$称为\textbf{空穴俘获系数}，反映复合中心平均俘获空穴的能力.
 
@@ -318,8 +318,43 @@ $p_1$等于费米能级和复合中心能级重合时价带的平衡空穴浓度
 
 将$s_+$表达式代入空穴产生率，得：
 \begin{equation}
-    \text{空穴产生率}=r_pp_1(N_t-n_t)
+    \text{空穴产生率}=r_pp_1(N_t-n_t)\label{eq:chap-5-indirect-recombination-hole-generation-rate}
 \end{equation}
+在稳定情况下，(1) 到 (4) 过程满足复合中心上电子数不变，即$n_t$为常数。由于 (1)  (4)两个过程造成复合中心上电子累积，(2) (3) 两个过程造成复合中心上电子的减少，为保持$n_t$不变，满足：
+\begin{equation}
+    \text{(1)}+\text{(4)}=\text{(2)}+\text{(3)}
+\end{equation}
+代入\autoref{eq:chap-5-indirect-recombination-electron-capture-rate}、\autoref{eq:chap-5-indirect-recombination-electron-generation-rate}、\autoref{eq:chap-5-indirect-recombination-hole-capture-rate}、\autoref{eq:chap-5-indirect-recombination-hole-generation-rate}：
+\begin{equation}
+    r_nn(N_t-n_t)+r_pp_1(N_t-n_t)=r_nn_1n_t+r_ppn_t\label{eq:chap-5-indirect-recombination-center-electron-conecntration}
+\end{equation}
+求解$n_t$，得：
+\begin{equation}
+    n_t=N_t\frac{r_nn+r_pp_1}{r_n(n+n_1)+r_p(p+p_1)}
+\end{equation}
+
+半导体的电子复合率为 $\text{(1)}-\text{(2)}$，空穴复合率为 $\text{(3)}-\text{(4)}$由于电子和空穴成对出现，二者应相等，等于半导体的净复合率$U_d$：
+\begin{equation}
+    U=\text{(1)}-\text{(2)}=\text{(3)}-\text{(4)}
+\end{equation}
+将\autoref{eq:chap-5-indirect-recombination-center-electron-conecntration}代入上式：
+\begin{equation}
+    U=N_t\frac{r_nr_p\left(np-n_1p_1\right)}{r_n(n+n_1)+r_p(p+p_1)}\label{eq:chap-5-indirect-recombination-center-total-recombination-rate-1}
+\end{equation}
+由于：
+\begin{equation}
+    n_1=N_c\exp{\left(\frac{E_t-E_c}{k_0T}\right)},\quad p_1=N_v\exp{\left(-\frac{E_t-E_v}{k_0T}\right)}
+\end{equation}
+得到：
+\begin{equation}
+    n_1p_1=N_cN_v\exp{\left(\frac{E_v-E_c}{k_0T}\right)}=n_i^2
+\end{equation}
+代入\autoref{eq:chap-5-indirect-recombination-center-total-recombination-rate-1}：
+\begin{equation}
+    U=N_t\frac{r_nr_p\left(np-n_i^2\right)}{r_n(n+n_1)+r_p(p+p_1)}\label{eq:chap-5-indirect-recombination-center-charge-carrier-total-recombination-rate}
+\end{equation}
+上式即通过复合中心复合的净复合率一般公式。
+
 
 
 
