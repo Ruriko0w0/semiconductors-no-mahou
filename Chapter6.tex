@@ -40,8 +40,7 @@ $l,\ s$为半导体的长度和截面积。因此$\Delta r\propto \Delta \sigma$
 
 \section{非平衡载流子的寿命}
 
-小注入时，$\Delta V$的变化反映了$\Delta p$的变化。光照停止后，$\Delta p$随时间按指数减小。非平衡载流子的平均生存时间称为载流子的\textbf{寿命}，用$\tau$表示(上章有个叫平均自由时间的物理量也记成$\tau$来
-着\includegraphics[width=4em, align=c]{idiot.jpg})。由于非平衡少子相比多子更占主导地位，因此非平衡载流子的寿命常称为\textbf{少子的寿命}。显然$\D \frac{1}{\tau}$是单位时间内非平衡载流子的复合概率。\vspace{1ex}
+小注入时，$\Delta V$的变化反映了$\Delta p$的变化。光照停止后，$\Delta p$随时间按指数减小。非平衡载流子的平均生存时间称为载流子的\textbf{寿命}，用$\tau$表示(上章有个叫平均自由时间的物理量也记成$\tau$ \includegraphics[width=4em, align=c]{idiot.jpg})。由于非平衡少子相比多子更占主导地位，因此非平衡载流子的寿命常称为\textbf{少子的寿命}。显然$\D \frac{1}{\tau}$是单位时间内非平衡载流子的复合概率。\vspace{1ex}
 通常将单位时间单位体积内净复合消失的电子-空穴对数称为非平衡载流子的\textbf{复合率}。显然，$\D \frac{\Delta p}{\tau}$就是复合率。
 
 一束光在一块n型半导体内均匀产生非平衡载流子$\Delta n$和$\Delta p$。$t=0$时光照停止，\vspace{1ex}
@@ -349,11 +348,111 @@ $p_1$等于费米能级和复合中心能级重合时价带的平衡空穴浓度
 \begin{equation}
     n_1p_1=N_cN_v\exp{\left(\frac{E_v-E_c}{k_0T}\right)}=n_i^2
 \end{equation}
-代入\autoref{eq:chap-5-indirect-recombination-center-total-recombination-rate-1}：
+代入\autoref{eq:chap-5-indirect-recombination-center-total-recombination-rate-1}，得到非平衡载流子复合率：
 \begin{equation}
     U=N_t\frac{r_nr_p\left(np-n_i^2\right)}{r_n(n+n_1)+r_p(p+p_1)}\label{eq:chap-5-indirect-recombination-center-charge-carrier-total-recombination-rate}
 \end{equation}
 上式即通过复合中心复合的净复合率一般公式。
+
+热平衡条件下，$np=n_0p_0=n_i^2$，代入\autoref{eq:chap-5-indirect-recombination-center-charge-carrier-total-recombination-rate}，显然有$U=0$。
+
+对半导体注入非平衡载流子，有$np>n_i^2$，$U>0$。代入关系$n=n_0+\Delta n,\ p=p_0+\Delta p,\ \Delta n=\Delta p$：
+\begin{equation}
+    U=N_t\frac{r_nr_p\left(n_0\Delta p+p_0\Delta p+\Delta p^2\right)}{r_n\left(n_0+n_1+\Delta p\right)+r_p\left(p_0+p_1+\Delta p\right)}
+\end{equation}
+非平衡载流子的寿命为：
+\begin{equation}
+    \tau=\frac{\Delta p}{U}=\frac{r_n\left(n_0+n_1+\Delta p\right)+r_p\left(p_0+p_1+\Delta p\right)}{N_tr_nr_p(n_0+p_0+\Delta p)}
+\end{equation}
+寿命$\tau$和复合中心浓度$N_t$成反比。
+
+在小注入条件下$\Delta p\ll (n_0+p_0)$，对于一般的复合中心，$r_n$和$r_p$相差不大，分子和分母上的$\Delta p$可以忽略：
+\begin{equation}
+    \tau=\frac{r_n(n_0+n_1)+r_p(p_0+p_1)}{N_tr_nr_p(n_0+p_0)}
+\end{equation}
+可见小注入条件下，寿命与非平衡载流子浓度无关。
+
+对于n型半导体，假定复合中心能级$E_t$接近价带，并令$E_t$关于禁带中心对称的能级位置为$E_t'$，$E_F$比$E_t'$更接近$E_c$，此时称为\textbf{强n型区}，满足$n_0\gg p_0,\ n_0\gg n_1,\ n_0\gg p_1$，寿命化为：
+\begin{equation}
+    \tau=\tau_p\approx\frac{1}{N_t\tau_p}\label{eq:chap-5-indirect-recombination-n-type-strong-n-lifetime}
+\end{equation}
+因此在重掺杂的n型半导体中，对寿命起决定性作用的是复合中心对少数载流子(空穴)的俘获系数$r_p$，与电子俘获系数$r_n$无关。
+
+若$E_F$在$E_i$和$E_t'$之间，称为\textbf{高阻区}。此时$p_1\gg n_0,\ p_1\gg p_0,\ p_1\gg n_1$，同时$n_0\gg p_0$，寿命：
+\begin{equation}
+    \tau\approx\frac{p_1}{N_tr_n}\frac{1}{n_0}
+\end{equation}
+高阻区中的寿命与多子浓度成反比，即与电导率成反比。
+
+对于p型材料，仍假定$E_t$接近价带，当$E_F$比$E_t$更接近$E_v$时，称为\textbf{强p型区}，寿命为：
+\begin{equation}
+    \tau=\tau_n\approx\frac{1}{N_tr_n}\label{eq:chap-5-indirect-recombination-p-type-strong-p-lifetime}
+\end{equation}
+可见复合中心对少子的俘获决定寿命。对\textbf{高阻区}，有：
+\begin{equation}
+    \tau\approx\frac{p_1}{N_tr_n}\frac{1}{p_0}
+\end{equation}
+\vspace{1ex}若复合中心更接近导带，则高阻区的寿命公式中$\D\frac{p_1}{r_n}$应当用$\D \frac{n_1}{r_p}$代替。
+
+将强n区寿命\autoref{eq:chap-5-indirect-recombination-n-type-strong-n-lifetime}和强p区寿命\autoref{eq:chap-5-indirect-recombination-p-type-strong-p-lifetime}代入非平衡载流子复合率
+\autoref{eq:chap-5-indirect-recombination-center-charge-carrier-total-recombination-rate}，得：
+\begin{align}
+    U&=\frac{np-n_i^2}{\D \frac{1}{N_tr_p}(n+n_1)+\frac{1}{N_tr_n}(p+p_1)}\notag\\
+    &=\frac{np-n_i^2}{\tau_p(n+n_1)+\tau_n(p+p_1)}
+\end{align}
+由于
+\begin{equation}
+    n_1=n_i\exp{\left(\frac{E_t-E_i}{k_0T}\right)},\quad p_1=n_i\exp{\left(\frac{E_i-E_t}{k_0T}\right)}
+\end{equation}
+代入：
+\begin{equation}
+    U=\frac{np-n_i^2}{\D \tau_p\left[n+n_i\exp{\left(\frac{E_t-E_i}{k_0T}\right)}\right]+\tau_n\left[p+n_i\exp{\left(\frac{E_i-E_t}{k_0T}\right)}\right]}\label{eq:chap-5-indirect-recombination-center-charge-carrier-total-recombination-rate-Ei-Et}
+\end{equation}
+\vspace{1ex}假定$r=r_n=r_p$，则$\D \tau_n=\tau_p=\frac{1}{N_tr}$，化简，得：
+\begin{align}
+    U&=\frac{N_tr\left(np-n_i^2\right)}{\D n+p+n_i\left[\exp{\left(\frac{E_t-E_i}{k_0T}\right)}+\exp{\left(-\frac{E_t-E_i}{k_0T}\right)}\right]}\notag\\
+    &=\frac{N_tr\left(np-n_i^2\right)}{\D n+p+2n_i\cosh{\left(\frac{E_t-E_i}{k_0T}\right)}}
+\end{align}
+\vspace{1ex}可以看出，$E_t\approx E_i$时，$\D\cosh{\left(\frac{E_t-E_i}{k_0T}\right)}\rightarrow \cosh{(0)}=1$极小，$U$趋于极大。如Cu，Fe，Au等杂质在Si中形成深能级，是有效的复合中心。远离禁带中央的浅能级不能起到有效的复合中心作用。
+
+我们假设复活中心是具有一定半径的球体，其截面为$\sigma$。截面积越大，载流子运动中被复合中心俘获概率越大。因此可以用$\sigma$表示复合中心俘获载流子的本领，称为\textbf{俘获截面}。复合中心俘获电子和空穴的本领不同，因此分别用\textbf{电子俘获截面}$\sigma_+$和\textbf{空穴俘获截面}$\sigma_-$来表示。
+
+载流子热运动速度$v_T$越大，它被复合中心俘获的概率也就越大。按照统计力学计算，得到$\D v_T=\sqrt{\frac{3k_0T}{m^*}}$。
+若不区分电子和空穴有效质量，$300\ \mathrm{K}$时，有$v_T=10^7\ \mathrm{cm/s}$。\vspace{1ex}
+
+俘获截面与俘获系数的关系有：
+\begin{equation}
+    r_n=\sigma_-v_T,\quad r_p=\sigma_+v_T
+\end{equation}
+利用此关系，可将\autoref{eq:chap-5-indirect-recombination-center-charge-carrier-total-recombination-rate-Ei-Et}重写为：
+\begin{equation}
+    U=\frac{\sigma_+\sigma_-v_TN_t(np-n_i^2)}{\D \sigma_-\left[n+n_i\exp{\left(\frac{E_t-E_i}{k_0T}\right)}\right]+\sigma_+\left[p+n_i\exp{\left(\frac{E_i-E_t}{k_0T}\right)}\right]}
+\end{equation}
+实验表明，Mn，Fe，Co，Au，Cu，Ni可以在Ge中形成复合中心；Au，Cu，Fe，Mn，In可以在Si中形成复合中心。
+
+\subsection{表面复合}
+
+少子寿命很大程度上受半导体样品的形状和表面状态影响。\textbf{表面复合}指在半导体表面发生的复合过程。表面的杂质和缺陷在禁带形成复合中心能级，因此表面复合仍是间接复合。
+
+实际测得的寿命是体内复合和表面复合的综合结果。设这两种复合同时地单独平行发生，\vspace{1ex}
+记体内复合寿命为$\tau_v$，
+\vspace{1ex}则$\D \frac{1}{\tau_v}$就是体内复合概率。记表面复合寿命为$\tau_s$，则$\D \frac{1}{\tau_s}$就是表面复合概率。总概率为：
+\begin{equation}
+    \frac{1}{\tau}=\frac{1}{\tau_v}+\frac{1}{\tau_s}
+\end{equation}
+$\tau$称为\textbf{有效寿命}。
+
+把单位时间内通过单位表面积复合的电子-空穴对数称为\textbf{表面复合率}，记$U_s$。表面复合率$U_s$与表面处非平衡载流子浓度$\Delta p_s$成正比：
+\begin{equation}
+    U_s=s\Delta p_s
+\end{equation}
+比例系数$s$表示表面复合的强弱，量纲为速度，称为\textbf{表面复合速度}。
+
+\section{陷阱效应}
+
+
+
+
 
 
 

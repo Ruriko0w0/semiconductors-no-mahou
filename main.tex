@@ -1,5 +1,6 @@
 \documentclass{report}
-\usepackage{xeCJK}
+\RequirePackage[UTF8,scheme=plain]{ctex}
+%\usepackage{xeCJK}
 \usepackage{inputenc}
 
 \usepackage[T1]{fontenc}
@@ -51,6 +52,9 @@
 
 \definecolor{structurecolor}{RGB}{0,120,2}
 
+\newCJKfontfamily\mincho{IPAexMincho}
+\newCJKfontfamily\FandolSong{FandolSong-Regular}
+
 \newcommand{\D}{\displaystyle}
 
 %\renewcommand\figureautorefname{图}
@@ -84,7 +88,7 @@
 \begin{titlepage}
 \vspace*{\stretch{1}}
 \begin{center}
-  {\Huge\bfseries 半導体 \includegraphics[width=2em, align=c]{の.png} まほう}\\[2ex]
+  {\Huge\mincho \bfseries 半導体 \includegraphics[width=2em, align=c]{の.png} まほう}\\[2ex]
   \textsc{\LARGE Semiconductors no Mahou}\\[6.5ex]
   {\large\bfseries riku\ding{73}0w0}           \\
   \vspace{4ex}
