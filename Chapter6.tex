@@ -513,7 +513,7 @@ $\tau$称为\textbf{有效寿命}。
     L_p=\sqrt{D_p\tau}
 \end{equation}
 我们讨论在不同条件下解的具体形式：\vspace{1ex}\\
-1. \textbf{样品足够厚}
+\textbf{1. 样品足够厚}
 
 此时载流子未到达样品另一端，已基本消失。此时，$x\rightarrow\infty$时，$\Delta p\rightarrow 0$。代入边界条件，易得$B=0$。此时有：
 \begin{equation}
@@ -527,14 +527,165 @@ $x=0$时，$\Delta p(0)=\Delta p_0$，代入得到$A=\Delta p_0$，故有：
 \begin{equation}
     \Bar{x}=\frac{\D\int_0^\infty x\Delta p(x)\mathrm{d}x}{\D\int_0^\infty \Delta p(x)\mathrm{d}x}=\frac{\D\int_0^\infty x\exp{\left(-\frac{x}{L_p}\right)}\mathrm{d}x}{\D\int_0^\infty\exp{\left(-\frac{x}{L_p}\right)}\mathrm{d}x}=L_p
 \end{equation}
-即$L_p$是载流子深入半导体的平均距离，称\textbf{扩散长度}。将\autoref{eq:chap-5-uneqilibrium-hole-diffusion-concentration-distribution-long}代入\autoref{eq:chap-5-uneqilibrium-hole-diffusion-law}，得：
+即$L_p$是载流子深入半导体的平均距离，称\textbf{扩散长度}。扩散长度由扩散系数和材料寿命决定。将
+\autoref{eq:chap-5-uneqilibrium-hole-diffusion-concentration-distribution-long} 代入 \autoref{eq:chap-5-uneqilibrium-hole-diffusion-law}，得：
 \begin{equation}
-    S_p=\frac{D_p}{L_p}\Delta p_0\exp{\left(-\frac{x}{L_p}\right)}
+    S_p=\frac{D_p}{L_p}\Delta p_0\exp{\left(-\frac{x}{L_p}\right)}=\frac{D_p}{L_p}\Delta p(x)
+\end{equation}
+材料表面处的空穴扩散流密度为$\D \Delta p_0\left(\frac{D_p}{L_p}\right)$。\vspace{1ex}\\
+\textbf{2. 样品厚度一定}
+
+样品厚度为$W$，在样品的另一端非平衡少子全部引出。边界条件有：
+\begin{align}
+    &x=0\ \text{处},\quad \Delta p(x)=\Delta p_0\\
+    &x=W\ \text{处},\quad \Delta p(x)=0
+\end{align}
+代入边界条件，得：
+\begin{align}
+\left\{
+\begin{aligned}
+    &A+B=\Delta p_0\\
+    &A\exp{\left(-\frac{W}{L_p}\right)}+B\exp{\left(\frac{W}{L_p}\right)}=0
+\end{aligned}
+\right.
+\end{align}
+解方程组，得：
+\begin{align}
+    \left\{
+    \begin{aligned}
+        &A=\Delta p_0\frac{\D \exp{\left(\frac{W}{L_p}\right)}}{\D \exp{\left(\frac{W}{L_p}\right)}-\exp{\left(-\frac{W}{L_p}\right)}}=\Delta p_0\frac{\D \exp{\left(\frac{W}{L_p}\right)}}{\D \sinh{\left(\frac{W}{L_p}\right)}}\\
+        &B=-\Delta p_0\frac{\D \exp{\left(-\frac{W}{L_p}\right)}}{\D \exp{\left(\frac{W}{L_p}\right)}-\exp{\left(-\frac{W}{L_p}\right)}}=-\Delta p_0\frac{\D \exp{\left(-\frac{W}{L_p}\right)}}{\D \sinh{\left(\frac{W}{L_p}\right)}}
+    \end{aligned}
+    \right.
+\end{align}
+故有：
+\begin{equation}
+    \Delta p(x)=\Delta p_0\frac{\D \sinh{\left(\frac{W-x}{L_p}\right)}}{\D\sinh{\left(\frac{W}{L_p}\right)}}
+\end{equation}
+$W\ll L_p$时，上式化为：
+\begin{equation}
+    \Delta p(x)=\Delta p_0\frac{\D \frac{W-x}{L_p}}{\D\frac{W}{L_p}}=\Delta p_0\left(1-\frac{x}{W}\right)
+\end{equation}
+此时，非平衡载流子浓度在样品内线性分布，浓度梯度：
+\begin{equation}
+    \frac{\mathrm{d}\Delta p(x)}{\mathrm{d}x}=-\frac{\Delta p_0}{W}
+\end{equation}
+扩散流密度：
+\begin{equation}
+    S_p=-D_p\frac{\mathrm{d}\Delta p}{\mathrm{d}x}=\frac{\Delta p_0 D_p}{W}
+\end{equation}
+扩散流密度是个常数，也就是说非平衡载流子在材料中没有复合。
+
+对于电子，扩散定律为：
+\begin{equation}
+    S_n=-D_n\frac{\mathrm{d}\Delta n(x)}{\mathrm{d}x}
+\end{equation}
+$S_n$为电子扩散流密度，$D_n$为电子扩散系数。稳态扩散方程为：
+\begin{equation}
+    D_n\frac{\mathrm{d}^2\Delta n(x)}{\mathrm{d}x^2}=\frac{\Delta n(x)}{\tau}
+\end{equation}
+载流子的扩散运动会形成电流，即\textbf{扩散电流}。空穴扩散电流密度为：
+\begin{equation}
+    (J_p)_\text{Diffusion}=-qD_p\frac{\mathrm{d}\Delta p(x)}{\mathrm{d}x}
+\end{equation}
+电子扩散电流密度为：
+\begin{equation}
+    (J_n)_\text{Diffusion}=qD_n\frac{\mathrm{d}\Delta n(x)}{\mathrm{d}x}
 \end{equation}
 
+对于高维情况，非平衡载流子浓度与$x,\ y,\ z$三个维度有关。此时的浓度梯度矢量为$\nabla(\Delta p)$。载流子(空穴)的扩散定律为：
+\begin{equation}
+    \bm S_p=-D_p\nabla(\Delta p)
+\end{equation}
+稳态扩散方程为：
+\begin{equation}
+    D_p\nabla^2(\Delta p)=\frac{\Delta p}{\tau}
+\end{equation}
+此时的空穴扩散电流密度为：
+\begin{equation}
+    (\bm J_p)_\text{Diffusion}=-qD_p\nabla(\Delta p)
+\end{equation}
+类似地，电子扩散电流密度为：
+\begin{equation}
+    (\bm J_p)_\text{Diffusion}=qD_n\nabla(\Delta n)
+\end{equation}
 
+\section{载流子的漂移扩散\ \ \ 爱因斯坦关系式}
 
+外加电场时，如果存在非平衡载流子，在外加电场下也会做漂移运动，产生漂移电流。若外加电场为$\mathscr{E}$，则电子漂移电流为：
+\begin{equation}
+    (J_n)_\text{Drift}=q(n_0+\Delta n)\mu_n\mathscr{E}=qn\mu_n\mathscr{E}
+\end{equation}
+空穴漂移电流为：
+\begin{equation}
+    (J_p)_\text{Drift}=q(p_0+\Delta p)\mu_p\mathscr{E}=qp\mu_p\mathscr{E}
+\end{equation}
 
+如果半导体中非平衡载流子的浓度分布不均匀，同时存在外加电场的作用，会同时存在扩散电流和漂移电流。此时的总电流是扩散电流和漂移电流的叠加。对于一块n型半导体，沿x方向外加电场，同时在表面光注入非平衡载流子，少子空穴的电流密度为：
+\begin{equation}
+    J_p=(J_p)_\text{Diffusion}+(J_p)_\text{Drift}=qp\mu_p\mathscr{E}-qD_p\frac{\mathrm{d}\Delta p}{\mathrm{d}x}\label{eq:chap-5-unequilibrium-hole-total-J}
+\end{equation}
+电子电流密度：
+\begin{equation}
+    J_n=(J_n)_\text{Diffusion}+(J_n)_\text{Drift}=qn\mu_n\mathscr{E}+qD_n\frac{\mathrm{d}\Delta n}{\mathrm{d}x}\label{eq:chap-5-unequilibrium-electron-total-J}
+\end{equation}
+显然，迁移率反映了载流子在电场下运动的难易，扩散系数反映了浓度梯度下载流子扩散运动的难易。
+
+考虑一块热平衡下的非均匀n型半导体，施主杂质浓度随$x$增大而下降，电子和空穴浓度都是$x$的函数，记$n_0(x)$和$p_0(x)$。由于浓度梯度存在，载流子沿$x$方向扩散，产生扩散电流。电子扩散电流密度为：
+\begin{equation}
+    (J_n)_\text{Diffusion}=qD_n\frac{\mathrm{d}n_0(x)}{\mathrm{d}x}\label{eq:chap-5-equilibrium-n-type-semi-electron-diffusion-J}
+\end{equation}
+空穴扩散电流密度为：
+\begin{equation}
+    (J_p)_\text{Diffusion}=-qD_p\frac{\mathrm{d}p_0(x)}{\mathrm{d}x}\label{eq:chap-5-equilibrium-n-type-semi-hole-diffusion-J}
+\end{equation}
+由于电离杂质不能移动，载流子扩散运动使载流子有均匀分布的趋势，使得半导体内部不再处处保持电中性，体内会存在电场$\mathscr{E}$。电场使载流子产生漂移电流：
+\begin{align}
+    &(J_n)_\text{Drift}=n_0(x)q\mu_n\mathscr{E}\label{eq:chap-5-equilibrium-n-type-semi-electron-drift-J}\\
+    &(J_p)_\text{Drift}=p_0(x)q\mu_p\mathscr{E}\label{eq:chap-5-equilibrium-n-type-semi-hole-drift-J}
+\end{align}
+然而热平衡下不存在宏观电流，因而总电流为$0$：
+\begin{align}
+    &J_n=(J_n)_\text{Diffusion}+(J_n)_\text{Drift}=0\label{eq:chap-5-equilibrium-n-type-semi-electron-diffusion-drift-J-equilibrium}\\
+    &J_p=(J_p)_\text{Diffusion}+(J_p)_\text{Drift}=0\label{eq:chap-5-equilibrium-n-type-semi-hole-diffusion-drift-J-equilibrium}
+\end{align}
+将电子扩散电流密度 \autoref{eq:chap-5-equilibrium-n-type-semi-electron-diffusion-J}和电子漂移电流密度 \autoref{eq:chap-5-equilibrium-n-type-semi-electron-drift-J}代入 \autoref{eq:chap-5-equilibrium-n-type-semi-electron-diffusion-drift-J-equilibrium}，得：
+\begin{equation}
+    n_0(x)\mu_n\mathscr{E}=-D_n\frac{\mathrm{d}n_0(x)}{\mathrm{d}x}\label{eq:chap-5-equilibrium-n-type-semi-electron-diffusion-drift-J-equilibrium-equation}
+\end{equation}
+半导体内部有电场时，各处电势不相等，为$x$的函数，记$V(x)$，有：
+\begin{equation}
+    \mathscr{E}=-\frac{\mathrm{d}V(x)}{\mathrm{d}x}\label{eq:chap-5-electrical-field-potential-relation}
+\end{equation}
+考虑电子能量时，需计入电场产生的电势能$-qV(x)$，故导带底能量为$E_c-qV(x)$，也会随$x$变化。非简并情况下，电子浓度为：
+\begin{equation}
+    n_0(x)=N_c\exp{\left[\frac{E_F+qV(x)-E_c}{k_0T}\right]}
+\end{equation}
+对$x$求导，得：
+\begin{equation}
+    \frac{\mathrm{d}n_0(x)}{\mathrm{d}x}=\frac{q}{k_0T}N_c\exp{\left[\frac{E_F+qV(x)-E_c}{k_0T}\right]}\frac{\mathrm{d}V(x)}{\mathrm{d}x}=n_0(x)\frac{q}{k_0T}\frac{\mathrm{d}V(x)}{\mathrm{d}x}\label{eq:chap-5-eqilibrium-electron-concentration-differential-by-x}
+\end{equation}
+将 \autoref{eq:chap-5-electrical-field-potential-relation}和 \autoref{eq:chap-5-eqilibrium-electron-concentration-differential-by-x}代入 \autoref{eq:chap-5-equilibrium-n-type-semi-electron-diffusion-drift-J-equilibrium-equation}，得：
+\begin{equation}
+    \frac{D_n}{\mu_n}=\frac{k_0T}{q}\label{eq:chap-5-electron-einstein-relation}
+\end{equation}
+同理，对于空穴有：
+\begin{equation}
+    \frac{D_p}{\mu_p}=\frac{k_0T}{q}\label{eq:chap-5-hole-eintein-relation}
+\end{equation}
+\autoref{eq:chap-5-electron-einstein-relation}和 \autoref{eq:chap-5-hole-eintein-relation}称为\textbf{爱因斯坦关系}。它反映了非简并情况下载流\textbf{迁移率}和\textbf{扩散系数}间的关系。通过爱因斯坦关系，可以由已知的迁移率得到扩散系数。
+
+由\autoref{eq:chap-5-unequilibrium-hole-total-J}和\autoref{eq:chap-5-unequilibrium-electron-total-J}，代入爱因斯坦关系\autoref{eq:chap-5-electron-einstein-relation}和\autoref{eq:chap-5-hole-eintein-relation}，得到半导体总电流密度：
+\begin{equation}
+    J=J_n+J_p=q\mu_p\left(p\mathscr{E}-\frac{k_0T}{q}\frac{\mathrm{d}\Delta p}{\mathrm{d}x}\right)+q\mu_n\left(n\mathscr{E}+\frac{k_0T}{q}\frac{\mathrm{d}\Delta n}{\mathrm{d}x}\right)
+\end{equation}
+对于非均匀半导体，平衡半导体浓度是$x$的函数，扩散电流由载流子的总浓度梯度决定：
+\begin{equation}
+    J=q\mu_p\left(p\mathscr{E}-\frac{k_0T}{q}\frac{\mathrm{d}p}{\mathrm{d}x}\right)+q\mu_n\left(n\mathscr{E}+\frac{k_0T}{q}\frac{\mathrm{d}n}{\mathrm{d}x}\right)
+\end{equation}
+上式即半导体中同时存在扩散与漂移运动时的电流密度方程。
+
+\section{连续性方程}
 
 
 
