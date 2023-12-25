@@ -46,7 +46,7 @@ $l,\ s$为半导体的长度和截面积。因此$\Delta r\propto \Delta \sigma$
 一束光在一块n型半导体内均匀产生非平衡载流子$\Delta n$和$\Delta p$。$t=0$时光照停止，\vspace{1ex}
 $\Delta p$会随时间变化，单位时间内浓度减小$\D -\frac{\mathrm{d}\Delta p(t)}{\mathrm{d}t}$，减小是由电子-空穴对的复合引起的，应当等于非平衡载流子的复合率：
 \begin{equation}
-    \frac{\mathrm{d}\Delta p(t)}{\mathrm{d}t}=-\frac{\Delta p}{\tau}
+    \frac{\mathrm{d}\Delta p(t)}{\mathrm{d}t}=-\frac{\Delta p}{\tau}\label{eq:chap-5-uneqilibrium-hole-recombination-equation}
 \end{equation}
 寿命$\tau$在小注入条件下是个恒量，与$\Delta p(t)$无关。解这个微分方程：
 \begin{equation}
@@ -767,6 +767,85 @@ $x=0$时，$\Delta p=\Delta p_0$，解得$B=\Delta p_0$，故：
     \lambda_2\approx-\frac{1}{L_p},\quad \Delta p=\Delta p_0\exp{\left(-\frac{1}{L_p}\right)}
 \end{equation}
 即扩散运动的衰减规律。
+
+以下是几个关于连续性方程应用的例子：
+\begin{enumerate}
+    \item \textbf{光激发载流子衰减}\\
+    若光照在均匀半导体，内部均匀产生非平衡载流子，则$\D\frac{\partial p}{\partial x}=0$。假定没有电场，且$g_p=0$。$t=0$时刻，光照停止，非平衡载流子复合消失，此时连续性方程变为：
+    \begin{equation}
+        \frac{\partial \Delta p}{\partial t}=-\frac{\Delta p}{\tau}
+    \end{equation}
+    上式即非平衡载流子衰减时遵守的微分方程 \autoref{eq:chap-5-uneqilibrium-hole-recombination-equation}。
+    \item \textbf{少子脉冲在电场中的漂移}\\
+    一块均匀的n型半导体，用局部光脉冲照射产生非平衡载流子。假定没有外加电场，脉冲停止后，连续性方程变为：
+    \begin{equation}
+        \frac{\partial \Delta p}{\partial t}=D_p\frac{\partial^2 \Delta p}{\partial x^2}-\frac{\Delta p}{\tau_p}
+    \end{equation}
+    假定方程的解具有如下形式：
+    \begin{equation}
+        \Delta p=f(x,\ t)\mathrm{e}^{-\frac{t}{\tau_p}}
+    \end{equation}
+    反代入方程，得：
+    \begin{equation}
+        \frac{\partial f(x,\ t)}{\partial t}=D_p\frac{\partial^2 f(x,\ t)}{\partial x^2}
+    \end{equation}
+    这是一维热传导方程。若$t=0$时过剩空穴只分布于$x=0$附近的窄区间内，则上面的热传导方程的解为：
+    \begin{equation}
+        f(x,\ t)=\frac{B}{\sqrt{t}}\exp{\left(-\frac{x^2}{4D_pt}\right)}
+    \end{equation}
+    $B$为常数。代入$\Delta p$中，得：
+    \begin{equation}
+        \Delta p=\frac{B}{\sqrt{t}}\exp{\left[-\left(\frac{x^2}{4D_pt}+\frac{t}{\tau}\right)\right]}
+    \end{equation}
+    对$x$在整个$x$轴上积分，再令$t=0$得到单位面积空穴数$N_p$：
+    \begin{equation}
+        B\sqrt{4\piD_p}=N_p
+    \end{equation}
+    解得：
+    \begin{equation}
+        B=\frac{N_p}{\sqrt{4\pi D_p}}
+    \end{equation}
+    最后有：
+    \begin{equation}
+        \Delta p=\frac{N_p}{\sqrt{4\pi D_pt}}\exp{\left[-\left(\frac{x^2}{4D_pt}+\frac{t}{\tau}\right)\right]}
+    \end{equation}
+    加上均匀电场，连续性方程变为：
+    \begin{equation}
+        \frac{\partial \Delta p}{\partial t}=D_p\frac{\partial^2 \Delta p}{\partial x^2}-\mu_p\mathscr{E}\frac{\partial \Delta p}{\partial t}-\frac{\Delta p}{\tau_p}
+    \end{equation}
+    类似地，可以解得：
+    \begin{equation}
+        \Delta p=\frac{N_p}{\sqrt{4\pi D_pt}}\exp{\left[-\frac{(x-\mu_p\mathscr{E}t)^2}{4D_pt}-\frac{t}{\tau}\right]}
+    \end{equation}
+    \item \textbf{稳态下的表面复合}\\
+    稳定光照一块均匀掺杂的n型半导体，均匀产生非平衡载流子，产生率为$g_p$。达到稳态时，有$\Delta p=p-p_0=\tau_p g_p$。在另一端存在表面复合，面上的过剩空穴浓度比体内低，空穴趋向于向此面扩散。此时空穴连续性方程为：
+    \begin{equation}
+        D_p\frac{\partial^2 \Delta p(x)}{\partial x^2}-\frac{\Delta p}{\tau_p}+g_p=0
+    \end{equation}
+    设表面复合的面在$x=0$处，则边界条件满足：
+    \begin{align}
+        \Delta p(\infty)=\tau_pg_p\\
+        D_p\left.\frac{\partial \Delta p(x)}{\partial x}\right|_{x=0}=s_p[p(0)-p_0]
+    \end{align}
+    $s_p$为表面复合速度，$p_0$为平衡空穴浓度。解得：
+    \begin{equation}
+        p(x)=p_0+\tau_pg_p\left[1-\frac{s_p\tau_p}{L_p+s_p\tau_p}\exp{\left(-\frac{x}{L_p}\right)}\right]
+    \end{equation}
+    $s_p\rightarrow 0$时，$p(x)=p_0+\tau_pg_p$，空穴均匀分布。$s_p\rightarrow \infty$时，$\D p(x)=p_0+\tau_pg_p\left[1-\exp{\left(-\frac{x}{L_p}\right)}\right]$，表面空穴浓度趋近于平衡浓度$p_0$。
+\end{enumerate}
+
+在三维情况下，载流子在单位体积内的累积由电流密度的散度决定，即：
+\begin{equation}
+    -\frac{1}{q}\nabla\cdot \bm J
+\end{equation}
+故空穴连续性方程为：
+\begin{equation}
+    \frac{\partial p}{\partial t}=-\frac{1}{q}\nabla\cdot\bm J_p-\frac{\Delta p}{\tau_p}+g_p
+\end{equation}
+电子连续性方程为：
+\begin{equation}
+    \frac{\partial n}{\partial t}=\frac{1}{q}\nabla \cdot\bm J_n-\frac{\Delta n}{\tau_n}+g_n
+\end{equation}
 
 
 
