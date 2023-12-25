@@ -480,7 +480,7 @@ $\tau$称为\textbf{有效寿命}。
 \end{equation}
 上式说明，当杂质能级与费米能级重合时，最有利于陷阱作用。
 
-\section{载流子的扩散运动}
+\section{载流子的扩散运动}\label{sec:semi-diffusion}
 
 对于一块均匀掺杂的载流子，载流子分布均匀，不会发生载流子的扩散运动。用光照射半导体，在材料表层会出现非平衡载流子。此时材料表层的非平衡载流子浓度比内部要高，从而引起载流子从表层向内部扩散。我们具体考虑空穴的扩散运动。
 
@@ -687,9 +687,86 @@ $S_n$为电子扩散流密度，$D_n$为电子扩散系数。稳态扩散方程�
 
 \section{连续性方程}
 
+电动力学中，有电流连续性方程：
+\begin{equation}
+    -\nabla \bm J=\frac{\partial \rho}{\partial t}
+\end{equation}
+$\bm J$为电流密度矢量，$\rho$为导体内电荷密度。对于一维情况，有：
+\begin{equation}
+    -\frac{\partial J}{\partial x}=\frac{\partial \rho}{\partial t}
+\end{equation}
+两边同时除以电荷$q$：
+\begin{equation}
+    -\frac{1}{q}\frac{\partial J}{\partial x}=\frac{1}{q}\frac{\partial \rho}{\partial t}
+\end{equation}
+上式左边为单位时间在单位体积内积累的净载流子浓度，右边为单位体积内载流子浓度随时间的变化。对于半导体，如n型半导体的少子空穴，有：
+\begin{equation}
+    -\frac{1}{q}\frac{\partial J_p}{\partial x}=\frac{\partial p}{\partial t}
+\end{equation}
 
+在一块n型半导体表面光注入非平衡载流子，同时存在$x$方向的电场$\mathscr{E}$，则少子空穴将同时做扩散和漂移运动。此时空穴浓度不仅是位置$x$的函数，也是时间$t$的函数。对于扩散运动，单位时间单位体积内积累的电荷数$(N_p)_\text{Diffusion}$是：
+\begin{equation}
+    (N_p)_\text{Diffusion}=-\frac{1}{q}\frac{\partial (J_p)_\text{Diffusion}}{\partial x}=D_p\frac{\partial^2 p}{\partial x^2}
+\end{equation}
+漂移运动引起的单位时间单位体积内积累空穴数$(N_p)_\text{Drift}$为：
+\begin{equation}
+    (N_p)_\text{Drift}=-\frac{1}{q}\frac{\partial (J_p)_\text{Drift}}{\partial x}=-\mu_p\mathscr{E}\frac{\partial p}{\partial x}-\mu_p p\frac{\partial \mathscr{E}}{\partial x}
+\end{equation}
+在小注入条件下，单位时间单位体积内复合消失的空穴数为$\D \frac{\Delta p}{\tau}$。$g_p$为外界因素导致的单位时间单位体积内的空穴变化，则单位体积内空穴随时间的变化率为：
+\begin{equation}
+    \frac{\partial p}{\partial t}=D_p\frac{\partial^2 p}{\partial x^2}-\mu_p\mathscr{E}\frac{\partial p}{\partial x}-\mu_p p\frac{\partial \mathscr{E}}{\partial x}-\frac{\Delta p}{\tau}+g_p
+\end{equation}
+上式即在漂移和扩散运动下少子运动方程，即\textbf{连续性方程}。\vspace{1ex}
 
-
+若光照稳定，有$g_p=0$，$p$不随时间变化，即$\D\frac{\partial p}{\partial t}=0$，此时连续性方程称为\textbf{稳态连续性方程}。假设材料均匀，则平衡空穴浓度$p_0$与$x$无关，电场均匀，$\D \frac{\partial \mathscr{E}}{\partial x}=0$，连续性方程变为：
+\begin{equation}
+    D_p\frac{\mathrm{d}^2p}{\mathrm{d}x^2}-\mu_p\mathscr{E}\frac{\partial \Delta p}{\partial x}-\frac{\Delta p}{\tau}=0
+\end{equation}
+通解为：
+\begin{equation}
+    \Delta p=A\mathrm{e}^{\lambda_1x}+B\mathrm{e}^{\lambda_2x}
+\end{equation}
+$\lambda_1$和$\lambda_2$为下面特征方程的两个根：
+\begin{equation}
+    D_p\lambda^2-\mu_p\mathscr{E}\lambda-\frac{1}{\tau}=0
+\end{equation}
+令
+\begin{equation}
+    L_p(\mathscr{E})=\mathscr{E}\mu_p\tau
+\end{equation}
+表示空穴在电场$\mathscr{E}$作用下在寿命$\tau$时间内的漂移距离，称为空穴的\textbf{牵引长度}。根据 \autoref{sec:semi-diffusion}关于半导体扩散的讨论，半导体的扩散长度为：
+\begin{equation}
+    L_p=\sqrt{D_p\tau}
+\end{equation}
+则特征方程化为：
+\begin{equation}
+    L_p^2\lambda^2-L_p(\mathscr{E})\lambda-1=0
+\end{equation}
+解得：
+\begin{equation}
+    \lambda_1=\frac{L_p(\mathscr{E})+\sqrt{L_p^2(\mathscr{E})+4L_p^2}}{2L_p^2},\quad \lambda_2=\frac{L_p(\mathscr{E})-\sqrt{L_p^2(\mathscr{E})+4L_p^2}}{2L_p^2}
+\end{equation}
+显然，$\lambda_1>0,\ \lambda_2<0$。对于上文的注入情况，少子浓度随$x$衰减，故第一项为$0$，即$A=0$，解化为：
+\begin{equation}
+    \Delta p=B\mathrm{e}^{\lambda_2x}
+\end{equation}
+$x=0$时，$\Delta p=\Delta p_0$，解得$B=\Delta p_0$，故：
+\begin{equation}
+    \Delta p=\Delta p_0\mathrm{e}^{\lambda_2x}=\Delta p_0\exp{\left(\frac{L_p(\mathscr{E})-\sqrt{L_p^2(\mathscr{E})+4L_p^2}}{2L_p^2}x\right)}
+\end{equation}
+电场很强时，有$L_p(\mathscr{E})\gg L_p$，有：
+\begin{equation}
+    \lambda_2=\frac{\D L_p(\mathscr{E})-L_p(\mathscr{E})\left[1+\frac{4L_p^2}{L_p^2(\mathscr{E})}\right]^\frac{1}{2}}{\D 2L_p^2}=\frac{\D L_p(\mathscr{E})-L_p(\mathscr{E})\left[1+\frac{2L_p^2}{L_p^2(\mathscr{E})}+\cdots\right]}{\D 2L_p^2}\approx -\frac{1}{L_p(\mathscr{E})}
+\end{equation}
+代入$\Delta p$，得：
+\begin{equation}
+    \Delta p=\Delta p_0\exp{\left(-\frac{x}{L_p(\mathscr{E})}\right)}
+\end{equation}
+上式说明，当电场很强，扩散运动可以忽略时，表面注入的非平衡浓度深入样本的平均距离为牵引长度$L_p(\mathscr{E})$而不是扩散长度$L_p$。若电场很弱，有$L_p(\mathscr{E})\ll L_p$，有：
+\begin{equation}
+    \lambda_2\approx-\frac{1}{L_p},\quad \Delta p=\Delta p_0\exp{\left(-\frac{1}{L_p}\right)}
+\end{equation}
+即扩散运动的衰减规律。
 
 
 
