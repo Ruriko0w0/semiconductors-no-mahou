@@ -325,18 +325,18 @@ $p_1$等于费米能级和复合中心能级重合时价带的平衡空穴浓度
 \end{equation}
 代入\autoref{eq:chap-5-indirect-recombination-electron-capture-rate}、\autoref{eq:chap-5-indirect-recombination-electron-generation-rate}、\autoref{eq:chap-5-indirect-recombination-hole-capture-rate}、\autoref{eq:chap-5-indirect-recombination-hole-generation-rate}：
 \begin{equation}
-    r_nn(N_t-n_t)+r_pp_1(N_t-n_t)=r_nn_1n_t+r_ppn_t\label{eq:chap-5-indirect-recombination-center-electron-conecntration}
+    r_nn(N_t-n_t)+r_pp_1(N_t-n_t)=r_nn_1n_t+r_ppn_t\label{eq:chap-5-indirect-recombination-center-electron-conecntration-equation}
 \end{equation}
 求解$n_t$，得：
 \begin{equation}
-    n_t=N_t\frac{r_nn+r_pp_1}{r_n(n+n_1)+r_p(p+p_1)}
+    n_t=N_t\frac{r_nn+r_pp_1}{r_n(n+n_1)+r_p(p+p_1)}\label{eq:chap-5-indirect-recombination-center-electron-conecntration}
 \end{equation}
 
 半导体的电子复合率为 $\text{(1)}-\text{(2)}$，空穴复合率为 $\text{(3)}-\text{(4)}$由于电子和空穴成对出现，二者应相等，等于半导体的净复合率$U_d$：
 \begin{equation}
     U=\text{(1)}-\text{(2)}=\text{(3)}-\text{(4)}
 \end{equation}
-将\autoref{eq:chap-5-indirect-recombination-center-electron-conecntration}代入上式：
+将\autoref{eq:chap-5-indirect-recombination-center-electron-conecntration-equation}代入上式：
 \begin{equation}
     U=N_t\frac{r_nr_p\left(np-n_1p_1\right)}{r_n(n+n_1)+r_p(p+p_1)}\label{eq:chap-5-indirect-recombination-center-total-recombination-rate-1}
 \end{equation}
@@ -449,6 +449,93 @@ $\tau$称为\textbf{有效寿命}。
 比例系数$s$表示表面复合的强弱，量纲为速度，称为\textbf{表面复合速度}。
 
 \section{陷阱效应}
+
+能级上的电子通过载流子的俘获和产生过程和载流子保持平衡。对于非平衡态的载流子，这种平衡会受到破坏。电子增加，说明能级有收容非平衡载流子的作用；电子减少，说明能级有收容空穴的作用。杂质能级积累非平衡载流子的作用称为\textbf{陷阱效应}。所有的杂质能级都有陷阱效应，我们只考虑能够显著积累非平衡载流子的杂质能级。我们把具有显著陷阱效应的杂质能级称为\textbf{陷阱}，相应的杂质和缺陷称为\textbf{陷阱中心}。
+
+杂质能级上电子数如\autoref{eq:chap-5-indirect-recombination-center-electron-conecntration}。$n_t$与$\Delta n$和$\Delta p$有关，小注入条件下，杂质能级电子积累有：
+\begin{equation}
+    \Delta n_t=\left(\frac{\partial n_t}{\partial n}\right)_0\Delta n+\left(\frac{\partial n_t}{\partial p}\right)_0\Delta p
+\end{equation}
+下标$0$指取平衡情况的值。由于$\Delta n$和$\Delta p$是对称的，我们只考虑其中任一项($\Delta n$)的情况：
+\begin{equation}
+    \Delta n_t=\frac{N_tr_n\left(r_nn_1+r_pp_0\right)}{\left[r_n(n_0+n_1)+r_p(p_0+p_1)\right]^2}\Delta n\label{eq:chap-5-unequilibrium-impurity-energy-trap-electron-concentration-change}
+\end{equation}
+杂质能级俘获电子和空穴的能力区别不大，令$r_p=r_n$，化简上式：
+\begin{equation}
+    \Delta n_t=\left(\frac{N_t}{n_0+n_1+p_0+p_1}\right)\left(\frac{n_1+p_0}{n_0+n_1+p_0+p_1}\right)\Delta n
+\end{equation}
+第二项因子恒小于$1$。因此，要有显著的陷阱效应，复合中心浓度$N_t$需要比平衡载流子浓度和$n_0+p_0$相当或者更大。在实际中吗，$r_n$和$r_p$差别往往很大。当$r_n\gg r_p$时，陷阱俘获电子，很难俘获空穴，被俘后的电子往往在被复合前就会被热激发回到导带，这样的陷阱即\textbf{电子陷阱}。同理，如果$r_p\gg r_n$，就是\textbf{空穴陷阱}。
+
+对于电子陷阱，式\autoref{eq:chap-5-unequilibrium-impurity-energy-trap-electron-concentration-change}略去$r_p$，得：
+\begin{equation}
+    \Delta n_t=\frac{N_tn_1}{\left(n_0+n_1\right)^2}\Delta n
+\end{equation}
+当$\Delta n$最大时的$n_1$为
+\begin{equation}
+    n_1=n_0
+\end{equation}
+此时$\Delta n_t$为：
+\begin{equation}
+    \Delta n_t=\frac{N_t}{4n_0^2}\Delta n
+\end{equation}
+上式说明，当杂质能级与费米能级重合时，最有利于陷阱作用。
+
+\section{载流子的扩散运动}
+
+对于一块均匀掺杂的载流子，载流子分布均匀，不会发生载流子的扩散运动。用光照射半导体，在材料表层会出现非平衡载流子。此时材料表层的非平衡载流子浓度比内部要高，从而引起载流子从表层向内部扩散。我们具体考虑空穴的扩散运动。
+
+在一维情况下，非平衡载流子浓度仅随$x$变化，浓度变化为$\Delta p(x)$，在$x$方向上，有：
+\begin{equation}
+    \text{浓度梯度}=\frac{\mathrm{d}\Delta p(x)}{\mathrm{d}x}
+\end{equation}
+单位时间通过单位面积的电子数称为\textbf{扩散流密度}，记作$S$。扩散流密度与浓度梯度成正比。记$S_p$为空穴扩散流密度，有：
+\begin{equation}
+    S_p=-D_p\frac{\mathrm{d}\Delta p(x)}{\mathrm{d}x}\label{eq:chap-5-uneqilibrium-hole-diffusion-law}
+\end{equation}
+比例系数$D_p$为\textbf{空穴扩散系数}，单位$\mathrm{cm^2/s}$，反映了非平衡少子扩散本领的大小。式中的负号指空穴由浓度高的地方向浓度低的地方扩散。上式即空穴的扩散定律。
+
+若用恒定光照半导体，表面处的非平衡载流子浓度是恒定值$\Delta p_0$。这种情况称为\textbf{稳定扩散}。
+
+一般情况下，扩散流密度$S_p$也会随位置$x$而变化。因此，单位时间在单位体积内积累的空穴数为：
+\begin{equation}
+    -\frac{\mathrm{d}S_p(x)}{\mathrm{d}x}=D_p\frac{\mathrm{d^2}\Delta p(x)}{\mathrm{d}x^2}
+\end{equation}
+稳定情况下，它等于单位时间单位体积内复合空穴数$\D\frac{\Delta p}{\tau}$：
+\begin{equation}
+    D_p\frac{\mathrm{d}^2p(x)}{\mathrm{d}x^2}=\frac{\Delta p(x)}{\tau}
+\end{equation}
+上式即一维稳定扩散下非平衡少子扩散方程，即\textbf{稳态扩散方程}。方程的通解：
+\begin{equation}
+    \Delta p(x)=A\exp{\left(-\frac{x}{L_p}\right)}+B\exp{\left(\frac{x}{L_p}\right)}
+\end{equation}
+其中
+\begin{equation}
+    L_p=\sqrt{D_p\tau}
+\end{equation}
+我们讨论在不同条件下解的具体形式：\vspace{1ex}\\
+1. \textbf{样品足够厚}
+
+此时载流子未到达样品另一端，已基本消失。此时，$x\rightarrow\infty$时，$\Delta p\rightarrow 0$。代入边界条件，易得$B=0$。此时有：
+\begin{equation}
+    \Delta p(x)=A\exp{\left(-\frac{x}{L_p}\right)}
+\end{equation}
+$x=0$时，$\Delta p(0)=\Delta p_0$，代入得到$A=\Delta p_0$，故有：
+\begin{equation}
+    \Delta p(x)=\Delta p_0\exp{\left(-\frac{x}{L_p}\right)}\label{eq:chap-5-uneqilibrium-hole-diffusion-concentration-distribution-long}
+\end{equation}
+这表明，非平衡少子浓度从表面浓度$\Delta p_0$开始，到内部按指数衰减。$L_p$是空穴复合直到浓度减少到原浓度的$\D\frac{1}{e}$的扩散距离。载流子平均扩散距离：
+\begin{equation}
+    \Bar{x}=\frac{\D\int_0^\infty x\Delta p(x)\mathrm{d}x}{\D\int_0^\infty \Delta p(x)\mathrm{d}x}=\frac{\D\int_0^\infty x\exp{\left(-\frac{x}{L_p}\right)}\mathrm{d}x}{\D\int_0^\infty\exp{\left(-\frac{x}{L_p}\right)}\mathrm{d}x}=L_p
+\end{equation}
+即$L_p$是载流子深入半导体的平均距离，称\textbf{扩散长度}。将\autoref{eq:chap-5-uneqilibrium-hole-diffusion-concentration-distribution-long}代入\autoref{eq:chap-5-uneqilibrium-hole-diffusion-law}，得：
+\begin{equation}
+    S_p=\frac{D_p}{L_p}\Delta p_0\exp{\left(-\frac{x}{L_p}\right)}
+\end{equation}
+
+
+
+
+
 
 
 
